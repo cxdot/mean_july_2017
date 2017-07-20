@@ -1,0 +1,15 @@
+<div id='container'>
+    <div>
+        <h1>US Time Zone Display</h1>
+    </div>
+    <div>
+        <button (click)="changeTime('PST')" [ngClass]="{clicked: tz === 'PST'}">PST</button>
+        <button (click)="changeTime('MST')" [ngClass]="{clicked: tz === 'MST'}">MST</button>
+        <button (click)="changeTime('CST')" [ngClass]="{clicked: tz === 'CST'}">CST</button>
+        <button (click)="changeTime('EST')" [ngClass]="{clicked: tz === 'EST'}">EST</button>
+        <button (click)="clearDate()">Clear</button>
+    </div>
+    <div>
+        <p>{{ time }} {{ today | date:'medium' }}</p>
+    </div>
+</div>

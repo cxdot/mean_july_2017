@@ -1,0 +1,18 @@
+#main {
+    background-color: #9FC5F8;
+    border: 2px solid black;
+    margin-top: 20px;
+    color: black;
+    width: 620px;
+    height: 600px;
+    float: right;
+}
+
+div p:first-child {
+    margin-top: 0px;
+    text-indent: 5px;
+}
+
+div p:nth-child(2) {
+    padding: 25px;
+}

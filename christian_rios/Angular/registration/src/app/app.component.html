@@ -1,0 +1,73 @@
+<div id="container">
+    <h1>Registration</h1>
+    <div id="registered" [ngStyle]="display">
+        <p>Thank you for registering with us {{user.firstName}}. We just sent you a confirmation email at {{user.email}}, and we will send all mail to {{user.addy}}, {{user.city}}, {{user.state}}.</p>
+    </div>
+
+    <form #register="ngForm" (submit)="onSubmit(user)" name="register">
+
+        <h3>Account Information</h3>
+        <div>
+            <label>*First Name: </label>
+            <input [(ngModel)]='user.firstName' type="text" name="firstName" required #firstName="ngModel">
+            <p *ngIf="firstName.errors && firstName.errors.required && firstName.touched">First name is required.</p>
+        </div>
+
+        <div>
+            <label>*Last Name:</label>
+            <input [(ngModel)]='user.lastName' type="text" name="lastName" required #lastName="ngModel">
+            <p *ngIf="lastName.errors && lastName.errors.required && lastName.touched">Last name is required.</p>
+        </div>
+
+        <div>
+            <label>*Email:</label>
+            <input [(ngModel)]='user.email' type="email" name="email" required #email="ngModel">
+            <p *ngIf="email.errors && email.errors.required && email.touched">Email is required.</p>
+        </div>
+
+        <div>
+            <label>*Password:</label>
+            <input [(ngModel)]='user.password' type="password" name="password" required #password="ngModel">
+            <p *ngIf="password.errors && password.errors.required && password.touched">Password is required.</p>
+        </div>
+
+        <div>
+            <label>*Password Confirmation:</label>
+            <input [(ngModel)]='user.c_password' type="password" name="c_password" required #c_password="ngModel">
+            <p *ngIf="c_password.errors && c_password.errors.required && c_password.touched">Email is required.</p>
+        </div>
+
+        <div>
+            <label>*Street Address:</label>
+            <input [(ngModel)]='user.addy' type="text" name="addy" required #addy="ngModel">
+            <p *ngIf="addy.errors && addy.errors.required && addy.touched">Address is required.</p>
+        </div>
+
+
+        <div>
+            <label>Unit/Apt #:</label>
+            <input [(ngModel)]='user.unit' type="text" name="unit" #unit="ngModel">
+        </div>
+
+        <div>
+            <label>*City:</label>
+            <input [(ngModel)]='user.city' type="text" name="city" required #city="ngModel">
+            <p *ngIf="city.errors && city.errors.required && city.touched">City is required.</p>
+        </div>
+
+        <div>
+            <label>*State:</label>
+            <select [(ngModel)]='user.state' name="state" required #state="ngModel">
+              <option value="Texas">Texas</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Oklahoma">Oklahoma</option>
+            </select>
+            <p *ngIf="state.errors && state.errors.required && state.touched">State is required.</p>
+        </div>
+
+        <div>
+            <input type="submit" value="Register" [disabled]=!register.valid>
+        </div>
+
+    </form>
+</div>

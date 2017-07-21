@@ -1,0 +1,9 @@
+#container {
+    clear: both;
+    widtH: 600px;
+}
+
+#container input {
+    clear: both;
+    width: 100%;
+}

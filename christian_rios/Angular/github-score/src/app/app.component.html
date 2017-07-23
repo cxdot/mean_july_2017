@@ -1,0 +1,14 @@
+<div id="container">
+    <form #gituser="ngForm" (submit)="onSubmit(gituser) ">
+        <label>GitHub Username:</label>
+        <input type="text " name="username " [(ngModel)]="gituser.username " required>
+        <input type="submit" value="Calculate my Github Score" [disabled]="!gituser.valid">
+    </form>
+    <h1>Your score: {{ score }}</h1>
+    <p [ngStyle]="{ 'color': 'red'} " *ngIf="error_msg != ''">{{ error_msg }}</p>
+    <p [ngStyle]="{ 'color': 'red'} " *ngIf="score > 0 && score < 20">Needs Work!</p>
+    <p [ngStyle]="{ 'color': 'orange'} " *ngIf="score > 20 && score < 50">A decent start!</p>
+    <p [ngStyle]="{ 'color': 'black'} " *ngIf="score > 50 && score < 100">Doing good!</p>
+    <p [ngStyle]="{ 'color': 'green'} " *ngIf="score > 100 && score < 200">Great job!</p>
+    <p [ngStyle]="{ 'color': 'blue'} " *ngIf="score > 200">Github Elite!!</p>
+</div>

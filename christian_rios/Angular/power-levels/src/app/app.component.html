@@ -1,0 +1,19 @@
+<div id="container">
+    <div id="power">
+        <p>Initial Power Level:</p>
+        <form (submit)="calculate(newPower)">
+            <select [(ngModel)]="newPower" id="powerLevel" name="power">
+            <option *ngFor="let i of num" >{{ i }}</option>
+            </select>
+            <input type="submit" value="Calculate Power">
+        </form>
+        <img src="http://orig08.deviantart.net/d56b/f/2013/023/e/6/goku_ssj2_by_bardocksonic-d5sfgs2.png" alt="">
+    </div>
+
+    <app-human [ngStyle]="comp" [human]="human"> </app-human>
+    <app-saiyan [ngStyle]="comp" [saiyan]="saiyan"> </app-saiyan>
+    <app-super-saiyan [ngStyle]="comp" [supersaiyan]="supersaiyan"> </app-super-saiyan>
+    <app-super-saiyan-two [ngStyle]="comp" [supersaiyan2]="supersaiyan2"> </app-super-saiyan-two>
+    <app-super-saiyan-three [ngStyle]="comp" [supersaiyan3]="supersaiyan3"> </app-super-saiyan-three>
+    <app-super-saiyan-four [ngStyle]="comp" [supersaiyan4]="supersaiyan4"> </app-super-saiyan-four>
+</div>

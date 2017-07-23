@@ -1,0 +1,6 @@
+<div id="saiyan">
+    <p>Saiyan Power Level: {{ saiyan }}</p>
+    <p *ngIf="saiyan > 9000 && saiyan < 20000">"Over 9000!"</p>
+    <p *ngIf="saiyan > 20000 && saiyan < 50000">"Superlative"</p>
+    <p *ngIf="saiyan === 50000">"The One"</p>
+</div>

@@ -1,0 +1,6 @@
+<div id="human">
+    <p>Human Power Level: {{ human }}</p>
+    <p *ngIf="human > 9000 && human < 20000">"Over 9000!"</p>
+    <p *ngIf="human > 20000 && human < 50000">"Superlative"</p>
+    <p *ngIf="human === 50000">"The One"</p>
+</div>

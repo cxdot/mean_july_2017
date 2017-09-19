@@ -1,0 +1,22 @@
+<a href [routerLink]="['/dashboard']">Cancel</a>
+<h1>Put the question and options here:</h1>
+<div>
+    <form (submit)="createQuestion()" method="post">
+        <label>Question:</label>
+        <input type="text" name="question" [(ngModel)]="newQuestion.question">
+
+        <div>
+            <label>Option 1:</label>
+            <input type="text" name="optionone" [(ngModel)]="newQuestion.optionone">
+            <label>Option 2:</label>
+            <input type="text" name="optiontwo" [(ngModel)]="newQuestion.optiontwo">
+            <label>Option 3:</label>
+            <input type="text" name="optionthree" [(ngModel)]="newQuestion.optionthree">
+            <label>Option 4:</label>
+            <input type="text" name="optionfour" [(ngModel)]="newQuestion.optionfour">
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </form>
+    <p *ngFor="let error of errors">{{ error }}</p>
+</div>

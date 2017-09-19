@@ -1,0 +1,16 @@
+button {
+    float: right;
+}
+
+a {
+    float: right;
+    font-size: 19pt;
+}
+
+h2 {
+    display: inline-block;
+}
+
+button:disabled {
+    display: none;
+}

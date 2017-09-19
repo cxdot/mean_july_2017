@@ -1,0 +1,23 @@
+<div class="container">
+    <div>
+        <h2>New Appointment</h2>
+        <p *ngFor="let error of errors" [ngStyle]="{'color': 'red'}">{{ error }}</p>
+        <form (submit)="createAppointment()">
+            <div>
+                <label>Date:</label>
+                <input min="Date.now()" class="form-control" type="date" name="date" [(ngModel)]="newAppointment.date">
+
+                <label>Time:</label>
+                <input class="form-control" type="time" name="time" [(ngModel)]="newAppointment.time">
+            </div>
+            <div>
+                <label>Complain:</label>
+                <textarea class="form-control" rows="5" name="complaint" [(ngModel)]="newAppointment.complaint"></textarea>
+            </div>
+            <div>
+                <button [routerLink]="['/dashboard']" type="button" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-default">Add Appointment</button>
+            </div>
+        </form>
+    </div>
+</div>
